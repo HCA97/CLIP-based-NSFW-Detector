@@ -7,3 +7,4 @@ open_clip_torch
 transformers
 pandas
 pyarrow
+Pillow
