@@ -8,3 +8,4 @@ transformers
 pandas
 pyarrow
 Pillow
+tqdm
