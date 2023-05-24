@@ -15,18 +15,13 @@ Install the dependicies:
 pip install -r requirements.txt
 ```
 
-***Note:** For training you might need a GPU*
-
 # Training
 
+***Note:** For training you might need a GPU*
 
-The training example for `ViT-L-14 openai` model because that is the only model that their training embedding are provided. 
+The training example for `ViT-L-14 openai` model is provided because that is the only model with their training embedding are provided. The training embeddings can be found in [google drive](https://drive.google.com/file/d/1yenil0R4GqmTOFQ_GVw__x61ofZ-OBcS/view?usp=sharing). 
 
-The training dataset can be found in [google drive](https://drive.google.com/file/d/1yenil0R4GqmTOFQ_GVw__x61ofZ-OBcS/view?usp=sharing). 
-
-## Testing
-
-The testing exampe onlt for the vit-l models bacuse the embedding for that exists see `data/README.md`
+The testing dataset only provided for the `ViT-L-14 openai` model as well see [data/README.md](data/README.md)
 
 # Inference 
 
