@@ -8,7 +8,7 @@ from .models import NSFWModel_L14, NSFWModel_B32, NSFWModel_H14
 
 
 
-def build_inference_model(head_path: str, model_name: str, dataset_name: str):
+def build_inference_model(head_path: str, model_name: str, dataset_name: str, device: str = 'cuda'):
 
     if model_name == 'ViT-B-32':
         head = NSFWModel_B32()
@@ -19,9 +19,11 @@ def build_inference_model(head_path: str, model_name: str, dataset_name: str):
 
     head.load_state_dict(torch.load(head_path))
     head.eval()
+    head.to(device)
     
     backbone = open_clip.create_model_and_transforms(model_name, dataset_name)[0].visual
     backbone.eval()
+    backbone.to(device)
 
     pre_processing = T.Compose([
         T.Resize(
