@@ -21,9 +21,8 @@ def build_inference_model(head_path: str, model_name: str, dataset_name: str, de
     head.eval()
     head.to(device)
     
-    backbone = open_clip.create_model_and_transforms(model_name, dataset_name)[0].visual
+    backbone = open_clip.create_model_and_transforms(model_name, dataset_name, device=device)[0].visual
     backbone.eval()
-    backbone.to(device)
 
     pre_processing = T.Compose([
         T.Resize(
